@@ -1,0 +1,39 @@
+{
+  "name": "sk-transport-pos",
+  "version": "1.0.0",
+  "description": "Transport Application - POS & Invoice System",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "Transport",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.sktransport.pos",
+    "productName": "Transport",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "**/*",
+      "!dist",
+      "!node_modules",
+      "!.git",
+      "!.gitignore"
+    ]
+  },
+  "dependencies": {
+    "dexie": "^4.3.0"
+  }
+}
